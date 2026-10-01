@@ -114,6 +114,12 @@ int main() {
         
         if (IsKeyDown(KEY_E)) ActiveFunction->setC(ActiveFunction->getC() + 0.02);
         if (IsKeyDown(KEY_D)) ActiveFunction->setC(ActiveFunction->getC() - 0.02);
+        
+        if (IsKeyDown(KEY_U)) ActiveFunction->setX(ActiveFunction->getX() + 0.02);
+        if (IsKeyDown(KEY_J)) ActiveFunction->setX(ActiveFunction->getX() - 0.02);
+        
+        if (IsKeyDown(KEY_I)) ActiveFunction->setZ(ActiveFunction->getZ() + 0.02);
+        if (IsKeyDown(KEY_K)) ActiveFunction->setZ(ActiveFunction->getZ() - 0.02);
         camera.fovy -= GetMouseWheelMove() * 2.0f;
 
         BeginDrawing();
@@ -125,7 +131,7 @@ int main() {
             DrawCylinderEx({ 0, 0, 0 }, { 20, 0, 0 }, 0.05, 0.05, 8, BLUE);
             DrawCylinderEx({ 0, 0, 0 }, { 0, 20, 0 }, 0.05, 0.05, 8, RED);
             DrawCylinderEx({ 0, 0, 0 }, { 0, 0, 20 }, 0.05, 0.05, 8, GREEN);
-            Draw(*ActiveFunction,-10, 10, -10, 10, 0.2, VIOLET);
+            Draw(*ActiveFunction,-20, 20, -20, 20, 0.2, VIOLET);
 
         EndMode3D();
         DrawText(ActiveFunction->formula().c_str(), 20, 20, 20, DARKBLUE);
